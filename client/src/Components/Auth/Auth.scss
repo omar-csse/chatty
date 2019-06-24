@@ -1,0 +1,64 @@
+@import "../../index.scss";
+
+.login form, .signup form {
+    margin: auto;
+    height: 330px;
+    min-width: 290px;
+    max-width: 400px;
+}
+
+.form .login-btn, .form .signup-btn {
+    background: $secondary-color;
+    font-size: 25px;
+    color: $main-color;
+    text-align: center;
+    min-width: 200px;
+    max-width: 200px;
+    border-radius: 12px;
+}
+
+.form .login-btn:hover, .form .signup-btn:hover {
+    background-color: $main-color;
+    color: $secondary-color;
+}
+
+.login form, .signup form {
+    background: #FFFFFF;
+    border: 0px;
+    padding: 20px;
+}
+
+.row label a {
+    text-decoration: underline;
+}
+
+.row label a:hover,  .row label a:hover {
+    color: $main-color;
+}
+
+.row label, .row label a {
+    color: $secondary-color;
+}
+
+::placeholder, ::-webkit-input-placeholder {
+    color: $secondary-color !important;
+}
+
+.login input, .signup input {
+    background: #FFFFFF;
+    border: 1px solid;
+    border-color: $secondary-color;
+    font-size: 20px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.form .right {
+    padding-left: 40px !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .App-form .right {
+        display: none;
+    } 
+}

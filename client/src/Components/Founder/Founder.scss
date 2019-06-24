@@ -1,0 +1,52 @@
+@import "../../index.scss";
+
+.founderimg {
+    margin-top: 100px;
+}
+
+.row {
+    width: 100%;
+}
+
+.foundername {
+    color: $secondary-color;
+    font-size: 2.5em;
+}
+
+.founder .founderbio p {
+    color: #9B9B9B;
+    text-justify: distribute;
+    margin: 0 5% 0 5%;
+}
+
+.founderbio, .foundername {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+footer {
+    .twitter-icon:hover, .fb-icon:hover, .ig-icon:hover, .linkedin-icon:hover {
+        opacity: 0.7;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    p {
+        text-align: distribute;
+        margin: 0 5% 0 5%;
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    p {
+        margin: 0 7% 0 7%;
+        font-size: 1em;
+    }
+}

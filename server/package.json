@@ -1,0 +1,29 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "Chatty app server",
+	"main": "app/app.js",
+	"author": "omar",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"start": "NODE_ENV=development nodemon app/app.js",
+		"build": "NODE_ENV=production node app/app.js"
+	},
+	"dependencies": {
+		"apollo-server-express": "^2.4.8",
+		"bcryptjs": "^2.4.3",
+		"compression": "^1.7.3",
+		"cookie-parser": "^1.4.4",
+		"express": "^4.16.4",
+		"graphql": "^14.1.1",
+		"helmet": "^3.15.1",
+		"jsonwebtoken": "^8.5.0",
+		"merge-graphql-schemas": "^1.5.8",
+		"moment": "^2.24.0",
+		"mongodb": "^3.1.13"
+	},
+	"devDependencies": {
+		"dotenv": "^6.2.0"
+	}
+}

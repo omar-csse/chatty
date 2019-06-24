@@ -1,0 +1,84 @@
+@import "../../index.scss";
+
+.secondary-nav {
+    background-color: $main-color;
+}
+
+li:hover {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.nav-item {
+    a {
+        color: $secondary-color;
+    }
+}
+
+#mainnav {
+    i {
+        color: $secondary-color;
+        font-size: 45px
+    }
+    i:hover {
+        color: $secondary-hover-color;
+    }
+}
+
+#mainnav {
+    -webkit-border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.nav-item {
+    a:hover {
+        color: $secondary-hover-color;
+    }
+}
+
+.navbar-nav {
+    li {
+        padding-left: 50px;
+    }
+}
+
+.navbar-btn {
+    padding-right: 6px !important;
+    padding-bottom: 2px !important;
+}
+
+.navlogo {
+    padding-left: 3px;
+    padding-top: 4px;
+}
+
+@media only screen and (max-width: 767px) {
+    li:hover {
+        margin-right: 5px;
+        background-color: $secondary-color;
+        a:hover {
+            color: $main-color;
+        }
+    }
+
+    ul {
+        padding-top: 10px;
+    }
+
+    .navbar-nav {
+        li {
+            padding-left: 9px;
+            padding-right: 0px;
+        }
+    }
+
+    span img {
+        padding-top: 2px;
+    }
+
+    #mainnav {
+        background-color: $main-color;
+    }
+}

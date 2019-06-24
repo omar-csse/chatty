@@ -1,0 +1,101 @@
+@import "../../index.scss";
+
+.home .right {
+    float: right;
+    margin-right: 10px;
+}
+
+.home .left {
+    float: left;
+    margin-left: 30px;
+}
+
+.home h1 b {
+    font-size: 1.5em;
+    font-style: italic;
+    color: $secondary-color;
+}
+
+.home p {
+    font-style: italic;
+    font-size: 1.5em;
+    color: $secondary-color;
+    margin: 0 !important;
+}
+
+.home .login-btn, .home .signup-btn {
+    background: $main-color;
+    font-size: 25px;
+    color: $secondary-color;
+    text-align: center;
+    min-width: 180px;
+    max-width: 180px;
+    border-radius: 12px;
+}
+
+.home .login-btn:hover, .home .signup-btn:hover {
+    background-color: $secondary-color;
+    color: $main-color;
+}
+
+.home form {
+    margin-top: 50px;
+    .signup-btn {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .home {
+        margin: 0 5% 0 5%;
+        display: flex;
+        flex-direction: column;
+        .right {
+            margin: unset;
+            justify-content: center;
+            text-align: center;
+            order: 1;
+        }
+        .left {
+            text-align: center;
+            margin: 80px 0 80px 0;
+            order: 2;
+            form {
+                display: flex;
+                justify-content: center;
+            }
+            h1, p {
+                text-align: center;
+            }
+        }
+    }
+} 
+
+@media only screen and (max-width: 500px) {
+    .home .logo img {
+        width: 250px;
+        height: 250px;
+    }
+    .home h1 b {
+        font-size: 1em;
+    } 
+    .home p {
+        font-size: 1.2em;
+    }
+    .home form {
+        flex-direction: column;
+        .login-btn, .signup-btn {
+            margin: 0 auto;
+            flex: 1;
+        }
+        .signup-btn {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .home h1 b, .home p {
+        font-size: 0.9em;
+    } 
+}
