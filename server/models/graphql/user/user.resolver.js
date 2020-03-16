@@ -5,7 +5,7 @@ const getUser = require('../../db/user/getUser.js');
 module.exports = resolvers = {
     Query: {
         user: async (_, {username}, {req, res}) => {
-            if (!req.loggedIn) throw new Error('Unauth');
+            if (!req.loggedIn) throw new Error('Not Logged In');
 			return await getUser(username);
         },
         login: async (_, {identifier, password}, {req, res}) => {

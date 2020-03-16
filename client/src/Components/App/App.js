@@ -5,7 +5,6 @@ import { ApolloProvider } from "react-apollo";
 import Nav from '../Nav/Nav';
 import Home from '../Home/Home';
 import Auth from '../Auth/Auth';
-import Founder from '../Founder/Founder';
 import './App.scss';
 
 const client = new ApolloClient({
@@ -22,7 +21,6 @@ const App = () => {
 						<Route exact path="/" component={Home}/>	
 						<Route path="/signup" render={() => <Auth path="/signup"/>}/>
 						<Route path="/login" render={() => <Auth path="/login"/>}/>
-						<Route path="/founder" component={Founder}/>
 					</Switch>
 				</div>
 			</Router>

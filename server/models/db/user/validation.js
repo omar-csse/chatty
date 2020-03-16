@@ -8,7 +8,7 @@ const validated = (username, email, password, authType) => {
 			}
 		}
 	}
-	if (authType === 'signup') {
+	else if (authType === 'signup') {
 		if (!emailRegExp.test(email)) {
 			return 'Enter a valid email';
 		}
