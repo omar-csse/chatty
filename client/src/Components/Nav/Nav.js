@@ -12,13 +12,10 @@ const Nav = (props) => {
                     <span><i className="fa fa-bars"></i></span>
                 </button>
 
-                <div className="collapse navbar-collapse navbg" id="navbarSupportedContent">
+                <div className="pl-2 pt-2 collapse navbar-collapse navbg" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <NavLink to="/" className="nav-item nav-link">Home</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/founder" className="nav-item nav-link">Founder</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/login" className="nav-item nav-link">Login</NavLink>
