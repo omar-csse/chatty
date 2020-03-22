@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient
 
 class ChattyDB {
     static async connectToDB() {
-        return await MongoClient.connect(this.url, {useNewUrlParser: true}, this.options)
+        return await MongoClient.connect(this.url, {useNewUrlParser: true, useUnifiedTopology: true}, this.options)
             .then(client => {this.db = client.db(process.env.DB_NAME)})
             .catch(err => console.log(err));
     }
