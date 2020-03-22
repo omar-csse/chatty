@@ -8,6 +8,7 @@ const Auth = (props) => {
 
     useEffect(() => {
         document.body.classList.add('App-form');
+        document.getElementById("navbarSupportedContent").classList.remove("show");
         return(() => document.body.classList.remove('App-form'));
     });
 

@@ -6,7 +6,8 @@ import './Home.scss';
 const Home = (props) => {
 
 	useEffect(() => {
-		document.body.classList.add('App-home');
+        document.body.classList.add('App-home');
+        document.getElementById("navbarSupportedContent").classList.remove("show");
 		return (() => document.body.classList.remove('App-home'));
 	});
 

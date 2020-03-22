@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import './Nav.scss';
+import btn from './btn.svg'
+
 
 const Nav = (props) => {
     return (
@@ -9,10 +11,10 @@ const Nav = (props) => {
             <nav className="navbar navbar-expand-md">
                 <Logo class="navlogo" anchorclass="navbar-logo" height="55" width="55"/>
                 <button className="navbar-toggler navbar-btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-                    <span><i className="fa fa-bars"></i></span>
+                    <img src={btn} alt="btn" height="45" width="45"/>
                 </button>
 
-                <div className="pl-2 pt-2 collapse navbar-collapse navbg" id="navbarSupportedContent">
+                <div className="pl-1 pt-2 collapse navbar-collapse navbg" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
                             <NavLink to="/" className="nav-item nav-link">Home</NavLink>
