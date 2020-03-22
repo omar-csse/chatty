@@ -19,13 +19,12 @@ const Signup = (props) => {
 	return (
 		<div className="signup">
 			<Form onSubmit={onSubmit} validate={validate}>
-
-				{({handleSubmit}) => <form onSubmit={handleSubmit}>
+				{({handleSubmit, submitting}) => <form onSubmit={handleSubmit}>
 					<Field name="username" placeholder="username" type="text" component={renderInput}/>
 					<Field placeholder="email" type="email" name="email" component={renderInput}/>
 					<Field placeholder="password" type="password" name="password" component={renderInput}/>
 					<div className="position-relative form-group mt-5">
-						<button type="submit" className="btn signup-btn btn-lg w-50">Sign up</button>
+						<button type="submit" disabled={submitting} className="btn signup-btn btn-lg w-50">Sign up</button>
 					</div>
 					<div className="position-relative form-group mt-5 pb-5 text-center">
 						<label>Already a chatty member? <Link to="/login">Login</Link></label>
