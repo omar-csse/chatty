@@ -14,7 +14,7 @@ const Home = (props) => {
 		<div className="home mt-5">
 			<div className="left mt-4">
 				<h1><b>Chatty makes it <br/>easier</b></h1>
-				<p className="pt-3">Chatty is a secure chat application <br/>using  hash functions.chatty makes <br/>it easier and more secure</p>
+				<p className="pt-3">Modern, easy, secure way to chat.</p>
 				<form>
 					<Link to="/login" className="login-btn btn btn-lg w-50">Log in</Link>
 					<Link to="/signup" className="signup-btn btn btn-lg w-50">Sign up</Link>
