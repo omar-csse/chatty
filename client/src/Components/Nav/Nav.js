@@ -8,12 +8,12 @@ import btn from './btn.svg'
 const Nav = (props) => {
     return (
         <nav id="mainnav" className="navbar navbar-expand-md">
-            <Logo class="navlogo" anchorclass="navbar-logo" height="55" width="55"/>
+            <Logo class="navlogo mb-1" anchorclass="navbar-logo" height="55" width="55"/>
             <button className="navbar-toggler navbar-btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
                 <img src={btn} alt="btn" height="45" width="45"/>
             </button>
 
-            <div className="pl-1 pt-2 collapse navbar-collapse navbg" id="navbarSupportedContent">
+            <div className="pt-2 collapse navbar-collapse navbg" id="navbarSupportedContent">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
                         <NavLink to="/" className="nav-item nav-link">Home</NavLink>
