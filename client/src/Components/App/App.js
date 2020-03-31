@@ -15,7 +15,7 @@ const App = () => {
 	return (
 		<ApolloProvider client={client}>
 			<Router>
-				<div className="App">
+				<div className="app">
 					<Nav />
 					<Switch>
 						<Route exact path="/" component={Home}/>	
