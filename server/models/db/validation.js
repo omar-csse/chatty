@@ -1,16 +1,17 @@
-const { usernameRegExp, emailRegExp, passwordRegExp } = require('../../RegExp/RegExp');
+const emailValidator = require('email-validator');
+const { usernameRegExp, passwordRegExp } = require('../../Regexp/Regexp');
 
-const validated = (username, email, password, authType) => {
+module.exports = validated = (username, email, password, authType) => {
 
 	if (authType === 'login') {
-		if (!emailRegExp.test(email)) {
+		if (!emailValidator.validate(email)) {
 			if (!usernameRegExp.test(username) || username === undefined) {
 				return 'Enter a valid username or email';
 			}
 		}
 	}
 	else if (authType === 'signup') {
-		if (!emailRegExp.test(email)) {
+		if (!emailValidator.validate(email)) {
 			return 'Enter a valid email';
 		}
 		if (!usernameRegExp.test(username) || username === undefined) {
@@ -23,5 +24,3 @@ const validated = (username, email, password, authType) => {
     
 	return true;
 }
-
-module.exports = validated;

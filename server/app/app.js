@@ -10,7 +10,7 @@ const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 
 
-const jwtAuth = require('../middleware/jwt.auth');
+const jwtAuth = require('../middlewares/jwt.auth');
 const ChattyDB = require('../config/db');
 
 let resolvers = require('../models/graphql/resolvers');
