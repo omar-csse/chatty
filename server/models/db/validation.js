@@ -1,5 +1,5 @@
 const emailValidator = require('email-validator');
-const { usernameRegExp, passwordRegExp } = require('../../Regexp/Regexp');
+const { usernameRegExp, passwordRegExp } = require('../../regexp/regexp');
 
 module.exports = validated = (username, email, password, authType) => {
 
