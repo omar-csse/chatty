@@ -1,6 +1,7 @@
 const { usernameRegExp, emailRegExp, passwordRegExp } = require('../../RegExp/RegExp');
 
 const validated = (username, email, password, authType) => {
+
 	if (authType === 'login') {
 		if (!emailRegExp.test(email)) {
 			if (!usernameRegExp.test(username) || username === undefined) {
@@ -18,7 +19,8 @@ const validated = (username, email, password, authType) => {
 	}
 	if (!passwordRegExp.test(password)) {
 		return 'Enter a valid password';
-	}
+    }
+    
 	return true;
 }
 

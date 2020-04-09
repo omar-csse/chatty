@@ -8,14 +8,18 @@ const { GraphQLError } = require('graphql');
 const express = require('express');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
+
+
 const jwtAuth = require('../middleware/jwt.auth');
 const ChattyDB = require('../config/db');
+
 let resolvers = require('../models/graphql/resolvers');
 let typeDefs = require('../models/graphql/schemas');
 
 const port = process.env.PORT || 4000;
 const localhost = '127.0.0.1';
 const app = express();
+
 app.use(cors(), helmet(), cookieParser(), compression(), jwtAuth);
 
 const server = new ApolloServer({ 
@@ -28,7 +32,7 @@ const server = new ApolloServer({
 server.applyMiddleware({app});
 
 const main = async () => {
-    await app.listen(port);
+    app.listen(port);
     await ChattyDB.connectToDB();
     return `🚀  http://${localhost}:${port}${server.graphqlPath}\n💽  ChattyDB is connected\n`
 }
