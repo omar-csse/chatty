@@ -13,8 +13,8 @@ module.exports = resolvers = {
         }
     },
     Mutation: {
-        signup: async (_, {username, email, password}, {transporter}) => {
-			return await signup(username, email, password, transporter);
+        signup: async (_, {username, email, password}) => {
+			return await signup(username, email, password);
         },
     }
 }

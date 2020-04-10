@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
+const transporter = require('./mailer')
 
-module.exports = sendConfirmEmail = (username, email, transporter) => {
+
+module.exports = sendConfirmEmail = (username, email) => {
 
     jwt.sign({username: username}, process.env.EMAIL_SECRET, {expiresIn: '30d',}, async (err, emailToken) => {
 

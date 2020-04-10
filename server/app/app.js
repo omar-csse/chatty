@@ -9,8 +9,6 @@ const express = require('express');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 
-const transporter = require('../models/mailer/mailer');
-
 const jwtAuth = require('../middlewares/jwt.auth');
 const ChattyDB = require('../config/db');
 
@@ -28,7 +26,7 @@ const server = new ApolloServer({
     typeDefs, 
     resolvers, 
     formatError: (e) => new GraphQLError(e.message),
-    context: ({req, res}) => ({req, res, transporter})
+    context: ({req, res}) => ({req, res})
 });
 server.applyMiddleware({app});
 
