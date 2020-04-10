@@ -2,13 +2,13 @@ const ChattyDB = require('../../config/db');
 const bcrypt = require('bcryptjs');
 const moment = require('moment');
 const validated = require('./validation');
-const sendConfirmEmail = require('../../models/mailer/confirmation')
+const sendConfirmEmail = require('../mailer/confirmation')
 
-module.exports = signup = async (username, email, password) => {
+module.exports = signup = async (username, email, password, transporter) => {
 
     value = validated(username, email, password, 'signup');
 
-    if (value === true) return await signupDB(username, email, password)
+    if (value === true) return await signupDB(username, email, password, transporter)
     else throw new Error(value)
 }
 
@@ -20,7 +20,7 @@ const signupDB = async (username, email, password, transporter) => {
 
     if (user) throw user.email === email ? new Error('email exist') : new Error('username exist');
     else {
-        await usersDB.insertOne({username, email, password: hashedPassword, createdAt: moment().format('llll')}); 
+        await usersDB.insertOne({username, email, confirmedEmail: false, password: hashedPassword, createdAt: moment().format('llll')}); 
     }
 
     sendConfirmEmail(username, email, transporter)
