@@ -1,6 +1,6 @@
-const login = require('../../db/user/login.js');
-const signup = require('../../db/user/signup.js');
-const getUser = require('../../db/user/getUser.js');
+const login = require('../../db/login.js');
+const signup = require('../../db/signup.js');
+const getUser = require('../../db/getUser.js');
 
 module.exports = resolvers = {
     Query: {
@@ -13,8 +13,8 @@ module.exports = resolvers = {
         }
     },
     Mutation: {
-        signup: async (_, {username, email, password}) => {
-			return await signup(username, email, password);
+        signup: async (_, {username, email, password}, {transporter}) => {
+			return await signup(username, email, password, transporter);
         },
     }
 }

@@ -1,4 +1,4 @@
-const ChattyDB = require('../../../config/db');
+const ChattyDB = require('../../config/db');
 
 module.exports = getUser = async (username) => {
 

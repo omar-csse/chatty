@@ -9,6 +9,7 @@ const express = require('express');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 
+const transporter = require('../models/mailer/mailer');
 
 const jwtAuth = require('../middlewares/jwt.auth');
 const ChattyDB = require('../config/db');
@@ -27,7 +28,7 @@ const server = new ApolloServer({
     typeDefs, 
     resolvers, 
     formatError: (e) => new GraphQLError(e.message),
-    context: ({req, res}) => ({req, res})
+    context: ({req, res}) => ({req, res, transporter})
 });
 server.applyMiddleware({app});
 
@@ -37,8 +38,9 @@ const main = async () => {
     return `🚀  http://${localhost}:${port}${server.graphqlPath}\n💽  ChattyDB is connected\n`
 }
 
-if (cluster.isMaster) {
-    for (let i = 0 ; i < os.cpus().length ; i++) cluster.fork();
-    cluster.on('exit', () => cluster.fork());
-}
-else main().then(console.log);
+// if (cluster.isMaster) {
+//     for (let i = 0 ; i < os.cpus().length ; i++) cluster.fork();
+//     cluster.on('exit', () => cluster.fork());
+// }
+// else 
+main().then(console.log);

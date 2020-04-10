@@ -1,8 +1,8 @@
-const ChattyDB = require('../../../config/db');
+const ChattyDB = require('../../config/db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const validated = require('./validation');
-const days = day =>  day * 24;
+
 
 module.exports = login = async (identifier, password, res) => {
 
@@ -23,7 +23,7 @@ const loginDB = async (identifier, password, res) => {
         if (!valid) throw new Error('invalid password');
     }
 
-    const token = await jwt.sign({username: user.username}, process.env.SECRET, {expiresIn: `${days(7)}hr`});
+    const token = await jwt.sign({username: user.username}, process.env.SECRET, {expiresIn: '7d'});
     await res.cookie('_sesjwtid', token, {maxAge: 7 * 24 * 60 * 60 * 1000, secure: false, httpOnly: true});
     
     return user;
