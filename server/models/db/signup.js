@@ -2,7 +2,7 @@ const ChattyDB = require('../../config/db');
 const bcrypt = require('bcryptjs');
 const moment = require('moment');
 const validated = require('./validation');
-const sendConfirmEmail = require('../mailer/confirmation')
+const sendConfirmEmail = require('../mailer/confirmation/confirmation')
 
 module.exports = signup = async (username, email, password) => {
 

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>chatty - email confirmation</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        code {
+            font-family: Loto source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+        }
+
+        .header, .footer, .rights-footer, .made-footer  {
+            background-color: #0A1E47;
+        }
+        
+        tr {
+            text-align: center;
+        }
+
+        tr.empty-row {
+            height: 50px;
+        }
+
+        tr, td, table {
+            border: none;
+        }
+
+        tr td:empty {
+            width: 20%;
+        }
+
+        .welcome, .msg, .username {
+            margin: 0 auto;
+        }
+
+        .welcome-section .welcome {
+            padding-top: 30px;
+        }
+
+        .welcome, .username {
+            margin: 0 5% 0 5%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .msg {
+            margin: 0 5% 0 5%;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+
+        .main-color {
+            color: #1BAD9B;
+        }
+
+        .secondary-color {
+            color: #0A1E47;
+        }
+
+        .header .logo img {
+            width: 200px;
+            height: 200px;
+        }
+
+        tr.welcome-section > td {
+            padding-top: 3em;
+        }
+
+        tr.btn-section > td {
+            padding-top: 1em;
+            padding-bottom: 4em;
+        }
+
+        tr.user-section > td {
+            padding-bottom: 1em;
+        }
+
+        tr.rights-footer > td {
+            padding-top: 2em;
+            padding-bottom: 1em;
+        }
+
+        tr.header > td {
+            border-radius: 15px 15px 0 0;
+        }
+
+        tr.made-footer > td {
+            padding-top: 1em;
+            padding-bottom: 2em;
+            border-radius: 0 0 15px 15px;
+        }
+
+        a {
+            color: #0A1E47;
+            text-decoration: none;
+        }
+
+        .activate_btn {
+            background: #1BAD9B;
+            font-size: 25px;
+            color: #0A1E47;
+            text-align: center;
+            text-decoration: none;
+            width: 220px;
+            border-radius: 7px;
+            padding: 8px 20px 8px 20px;
+            cursor: pointer;
+        }
+
+        .activate_btn:hover {
+            background: #0A1E47;
+            color: #1BAD9B;
+        }
+
+        @media only screen and (max-width: 769px) {
+            tr td:empty {
+                width: 0%;
+            }
+        }
+
+        @media only screen and (max-width: 450px) {
+
+            .msg {
+                padding-top: 50px;
+            }
+
+            .activate_btn {
+                font-size: 20px;
+                width: 180px;
+            }
+
+            .header .logo img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media only screen and (max-width: 340px) {
+
+            .footer, .rights-footer, .made-footer {
+                font-size: 13px;
+            }
+
+            .activate_btn {
+                font-size: 17px;
+                width: 150px;
+            }
+
+            .header .logo img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media only screen and (max-width: 250px) {
+            .activate_btn {
+                font-size: 13px;
+                width: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>&zwnj;</td>
+            <td>
+                <table width="100%" cellspacing="0" cellpadding="0"> 
+                    <tbody>
+                        <tr>
+                            <td class="empty-row">&zwnj;</td>
+                        </tr>
+                        <tr class="header">
+                            <td class="logo">
+                                <img src="https://storage.googleapis.com/data.omar.app/chatty/logo.png" alt="chatty" width="220" height="220">
+                            </td>
+                        </tr>
+                        <tr class="welcome-section">
+                            <td> <h2 class="welcome main-color">Welcome to chatty!</i></h2> </td>
+                        </tr>
+                        <tr class="user-section">
+                            <td><h2 class="username main-color"><i><%= username %></i></h2></td>
+                        </tr>
+                        <tr class="msg-section">
+                            <td><p class="msg main-color">Click the button to activate your email, Happy chattying!</p></td>
+                        </tr>
+                        <tr class="btn-section">
+                            <td><a href=<%= url %> class="activate_btn" target="_blank">CONFIRM EMAIL</a></td>
+                        </tr>
+                        <tr class="rights-footer">
+                            <td class="rights main-color item">&copy; 2020 Chatty. All Rights Reserved.</td> 
+                        </tr>
+                        <tr class="footer">
+                            <td><div class="designer main-color item">Designer. <i>Omar</i></div></td>
+                        </tr>
+                        <tr class="made-footer">
+                            <td><div class="designer main-color item">Made with ❤️ by <i>Omar Alqarni</i></div></td>
+                        </tr>
+                        <tr>
+                            <td class="empty-row">&zwnj;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td>&zwnj;</td>
+        </tr>
+    </table>
+</body>
+
+</html>
