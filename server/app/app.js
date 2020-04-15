@@ -2,7 +2,6 @@ require('dotenv').config();
 const cors = require('cors');
 const compression = require('compression');
 const { ApolloServer } = require('apollo-server-express');
-const { GraphQLError } = require('graphql');
 const express = require('express');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
@@ -28,7 +27,9 @@ const server = new ApolloServer({
     typeDefs, 
     resolvers,
     debug: false,
-    formatError: (e) => new GraphQLError(e),
+    formatError: (e) => {
+        return { message: e.originalError.message, code: e.originalError.extensions.code }
+    },
     context: ({req, res}) => ({req, res})
 });
 server.applyMiddleware({app});

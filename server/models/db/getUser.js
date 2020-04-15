@@ -1,12 +1,12 @@
 const ChattyDB = require('../../config/db');
-const { UserInputError } = require('apollo-server-express')
+const { ApolloError } = require('apollo-server-express')
 
 module.exports = getUser = async (username) => {
 
     const usersDB = await ChattyDB.db.collection('users');
     const user = await usersDB.findOne({username: username});
 
-    if (!user) throw new UserInputError('User not found');
+    if (!user) throw new ApolloError('User not found', 'UNFOUND_USER');
     
     return user;
 }
