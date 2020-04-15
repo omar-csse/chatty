@@ -5,7 +5,6 @@ type User {
     email: String!
     bio: String
     profile_img: String
-    createdAt: Date!
     followers: [User]
     following: [User]
 }
