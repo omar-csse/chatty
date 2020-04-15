@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const moment = require('moment');
 const validated = require('./validation');
 const sendConfirmEmail = require('../mailer/confirmation/confirmation')
-const { UserInputError } = require('apollo-server-express')
+const { UserInputError, ApolloError } = require('apollo-server-express')
 
 
 module.exports = signup = async (username, email, password) => {
@@ -22,7 +22,12 @@ const signupDB = async (username, email, password) => {
 
     if (user) throw new UserInputError(user.email === email ? 'email exist' : 'username exist');
     else {
-        await usersDB.insertOne({username, email, confirmedEmail: false, password: hashedPassword, createdAt: moment().format('llll')}); 
+        try {
+            await usersDB.insertOne({username, email, confirmedEmail: false, password: hashedPassword, createdAt: moment().format('llll')}); 
+        } catch(e) {
+            console.log(e)
+            throw new ApolloError('Internal server error')
+        }
     }
 
     sendConfirmEmail(username, email)
