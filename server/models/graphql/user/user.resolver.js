@@ -1,11 +1,12 @@
 const login = require('../../db/login.js');
 const signup = require('../../db/signup.js');
 const getUser = require('../../db/getUser.js');
+const { AuthenticationError } = require('apollo-server-express')
 
 module.exports = resolvers = {
     Query: {
         user: async (_, {username}, {req, res}) => {
-            if (!req.loggedIn) throw new Error('Not Logged In');
+            if (!req.loggedIn) throw new AuthenticationError('Not Logged In');
 			return await getUser(username);
         },
         login: async (_, {identifier, password}, {req, res}) => {
