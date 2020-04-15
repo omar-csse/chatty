@@ -1,6 +1,4 @@
 require('dotenv').config();
-const os = require('os');
-const cluster = require('cluster');
 const cors = require('cors');
 const compression = require('compression');
 const { ApolloServer } = require('apollo-server-express');
@@ -40,9 +38,5 @@ const main = async () => {
     return `🚀  http://${localhost}:${port}${server.graphqlPath}\n💽  ChattyDB is connected\n`
 }
 
-// if (cluster.isMaster) {
-//     for (let i = 0 ; i < os.cpus().length ; i++) cluster.fork();
-//     cluster.on('exit', () => cluster.fork());
-// }
-// else 
-main().then(console.log);
+
+main().then(console.log)
