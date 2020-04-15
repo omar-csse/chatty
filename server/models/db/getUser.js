@@ -6,7 +6,7 @@ module.exports = getUser = async (username) => {
     const usersDB = await ChattyDB.db.collection('users');
     const user = await usersDB.findOne({username: username});
 
-    if (!user) throw new ApolloError('User not found', 'UNFOUND_USER');
+    if (!user) throw new ApolloError('User not found', 'USER_NOT_FOUND');
     
     return user;
 }
