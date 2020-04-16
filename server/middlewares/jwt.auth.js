@@ -6,9 +6,9 @@ module.exports = jwtAuth = async (req, res, next) => {
 
     if (!token) return next();
     
-    await jwt.verify(token, process.env.SECRET, (err, data) => {
+    jwt.verify(token, process.env.SECRET, (err, payload) => {
         if (err) return next();
-        req.username = data.username;
+        req.payload = payload;
     }); 
 
     req.loggedIn = true;
