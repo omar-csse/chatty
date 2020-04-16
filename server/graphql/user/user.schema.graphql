@@ -1,0 +1,30 @@
+scalar Date
+
+type Me {
+    token: String!
+    username: String!
+    email: String!
+    bio: String
+    profile_img: String
+}
+
+type User {
+    username: String!
+}
+
+type UserInfo {
+    username: String!
+    bio: String
+    profile_img: String
+}
+
+type Query {
+    user(username: String!): UserInfo!
+    login(identifier: String!, password: String!): Me!
+    # followers(username: String!) [User]
+    # following(username: String!) [User]
+}
+
+type Mutation {
+    signup(username: String!, email: String!, password: String!): String
+}

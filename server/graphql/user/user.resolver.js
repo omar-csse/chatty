@@ -1,11 +1,14 @@
-const login = require('../../db/login.js');
-const signup = require('../../db/signup.js');
-const getUser = require('../../db/getUser.js');
+const login = require('../../models/db/login.js');
+const signup = require('../../models/db/signup.js');
+const getUser = require('../../models/db/getUser.js');
+const jwtAuth = require('../../middlewares/jwt.auth');
 const { AuthenticationError } = require('apollo-server-express')
+
 
 module.exports = resolvers = {
     Query: {
-        user: async (_, {username}, {req, res}) => {
+        user: async (_, {username}, context) => {
+            const {req, res} = jwtAuth(context)
             if (!req.loggedIn) throw new AuthenticationError('Not Logged In');
 			return await getUser(username);
         },
