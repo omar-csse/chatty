@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const validated = require('./validation');
 const { UserInputError, AuthenticationError } = require('apollo-server-express')
-const { createAccessToken, createRefreshToken } = require('../../config/tokens')
+const { createToken, setRefreshToken } = require('../../config/tokens')
 
 
 module.exports = login = async (identifier, password, res) => {
@@ -25,9 +25,9 @@ const loginDB = async (identifier, password, res) => {
         if (!valid) throw new AuthenticationError('invalid password');
     }
 
-    const token = createAccessToken(user.username);
-    const refresh_token = createRefreshToken(user.username)
-    await res.cookie("_sesjwtid", refresh_token, {secure: false, httpOnly: true, path: "/refresh_token"});
+    const token = createToken(user.username, process.env.SECRET, "1h");
+    const refresh_token = createToken(user.username, process.env.REFRESH_SECRET, "7d")
+    setRefreshToken(res, refresh_token, "/refresh_token")
     
     return {token: token};
 }
