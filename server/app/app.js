@@ -29,7 +29,7 @@ app.use('/refresh_token', refresh_token)
 app.use(jwtAuth)
 
 const server = new ApolloServer({ 
-    playground: process.env.NODE_ENV === 'development',
+    playground: process.env.NODE_ENV === 'production',
     typeDefs, 
     resolvers,
     debug: false,

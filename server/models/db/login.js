@@ -24,7 +24,8 @@ const loginDB = async (identifier, password, res) => {
         if (!valid) throw new AuthenticationError('invalid password');
     }
 
-    setCookie(res, "_sesjidrt", createToken({username: user.username, version:user.tokenVersion}, process.env.REFRESH_SECRET, "30d"))
-    setCookie(res, "__sesjidt_", createToken({username: user.username}, process.env.SECRET, "1h"))
-    return {username: user.username};
+    const refresh_token = createToken({username: user.username, version:user.tokenVersion}, process.env.REFRESH_SECRET, "30d")
+    const refToken = setCookie(res, "_sesjidrt", refresh_token, "/refresh_token")
+    const token = setCookie(res, "__sesjidt_", createToken({username: user.username}, process.env.SECRET, "2h"), "/")
+    return {username: user.username, token: token, refToken: refToken};
 }

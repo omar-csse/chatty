@@ -1,6 +1,8 @@
 scalar Date
 
 type Me {
+    token: String!
+    refToken: String!
     username: String!
     email: String!
     bio: String
