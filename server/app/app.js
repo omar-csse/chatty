@@ -19,6 +19,7 @@ const port = process.env.PORT || 4000;
 const localhost = '127.0.0.1';
 const app = express();
 
+app.disable("x-powered-by");
 app.use(cors(), helmet(), cookieParser(), compression());
 app.use('/confirmation', confirmation)
 app.use('/refresh_token', refresh_token)
