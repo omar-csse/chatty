@@ -5,8 +5,8 @@ const createToken = (payload, secret, duration) => {
     return jwt.sign(payload, secret, { expiresIn: duration});
 };
 
-const setRefreshToken = (res, token) => {
-    res.cookie("_sesjid", token, {secure: false, httpOnly: true, path: "/"});
+const setCookie = (res, cookieName, token) => {
+    res.cookie(cookieName, token, {secure: false, httpOnly: true, path: "/", SameSite: "None"});
 }
 
 const clearCookie = (res, cookiename, path) => {
@@ -16,6 +16,6 @@ const clearCookie = (res, cookiename, path) => {
 
 module.exports = {
     createToken,
-    setRefreshToken,
+    setCookie,
     clearCookie
 }

@@ -2,7 +2,7 @@ const ChattyDB = require('../../config/db');
 const bcrypt = require('bcryptjs');
 const validated = require('./validation');
 const { UserInputError, AuthenticationError } = require('apollo-server-express')
-const { createToken, setRefreshToken } = require('../../config/tokens')
+const { createToken, setCookie } = require('../../config/tokens')
 
 
 module.exports = login = async (identifier, password, res) => {
@@ -24,9 +24,7 @@ const loginDB = async (identifier, password, res) => {
         if (!valid) throw new AuthenticationError('invalid password');
     }
 
-    const token = createToken({username: user.username}, process.env.SECRET, "1h");
-    const refresh_token = createToken({username: user.username, version:user.tokenVersion}, process.env.REFRESH_SECRET, "7d")
-    setRefreshToken(res, refresh_token)
-    
-    return {token: token};
+    setCookie(res, "_sesjidrt", createToken({username: user.username, version:user.tokenVersion}, process.env.REFRESH_SECRET, "30d"))
+    setCookie(res, "__sesjidt_", createToken({username: user.username}, process.env.SECRET, "1h"))
+    return {username: user.username};
 }

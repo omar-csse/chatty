@@ -1,19 +1,17 @@
 const jwt = require('jsonwebtoken');
-const { AuthenticationError } = require('apollo-server-express')
 
 
-module.exports = jwtAuth = ({req, res}) => {
+module.exports = jwtAuth = (req, res, next) => {
 
-    const authorization = req.headers["authorization"];
+    const token = req.cookies.__sesjidt_;
 
-    if (!authorization) throw new AuthenticationError("Not authenticated");
+    if (!token) return next();
     
-    const token = authorization.split(" ")[1]
     jwt.verify(token, process.env.SECRET, (err, payload) => {
-        if (err) throw new AuthenticationError("Invalid token");;
+        if (err) return next();
         req.username = payload.username;
     }); 
 
     req.loggedIn = true;
-    return {req, res}
+    return next()
 }
