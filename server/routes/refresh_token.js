@@ -5,6 +5,7 @@ const { createToken, setRefreshToken } = require('../config/tokens')
 
 
 router.post('/', async (req, res) => {
+   
     const token = req.cookies._sesjwtid;
     if (!token) {
         return res.send({ ok: false, accessToken: "" });
@@ -24,12 +25,12 @@ router.post('/', async (req, res) => {
       return res.send({ ok: false, accessToken: "" });
     }
 
-    // if (user.tokenVersion !== payload.tokenVersion) {
-    //   return res.send({ ok: false, accessToken: "" });
-    // }
+    if (user.tokenVersion !== payload.version) {
+      return res.send({ ok: false, accessToken: "" });
+    }
 
     const refresh_token = createToken(user.username, process.env.REFRESH_SECRET, "7d")
-    setRefreshToken(res, refresh_token, "/refresh_token")
+    setRefreshToken(res, refresh_token)
     return res.send({ ok: true, accessToken: createToken(user.username, process.env.SECRET, "1h") });  
 });
 

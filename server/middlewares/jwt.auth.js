@@ -11,7 +11,7 @@ module.exports = jwtAuth = ({req, res}) => {
     const token = authorization.split(" ")[1]
     jwt.verify(token, process.env.SECRET, (err, payload) => {
         if (err) throw new AuthenticationError("Invalid token");;
-        req.payload = payload;
+        req.username = payload.username;
     }); 
 
     req.loggedIn = true;

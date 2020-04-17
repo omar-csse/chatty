@@ -23,7 +23,7 @@ const signupDB = async (username, email, password) => {
     if (user) throw new UserInputError(user.email === email ? 'email exist' : 'username exist');
     else {
         try {
-            await usersDB.insertOne({username, email, confirmedEmail: false, password: hashedPassword, createdAt: moment().format('llll')});
+            await usersDB.insertOne({username, email, confirmedEmail: false, password: hashedPassword, createdAt: moment().format('llll'), tokenVersion: 0});
             sendConfirmEmail(username, email)
     
             return 'signed up successfully'; 

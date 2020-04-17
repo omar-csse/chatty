@@ -21,10 +21,13 @@ type UserInfo {
 type Query {
     user(username: String!): UserInfo!
     login(identifier: String!, password: String!): Me!
+    logout: String!
+    forget_password(email: String!): Boolean!
     # followers(username: String!) [User]
     # following(username: String!) [User]
 }
 
 type Mutation {
     signup(username: String!, email: String!, password: String!): String
+    reset_password(email: String!, oldPass: String!, newPass: String!): Boolean!
 }
