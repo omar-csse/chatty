@@ -3,6 +3,7 @@ const {  clearCookie  } = require('../config/tokens')
 
 module.exports = logout = (res) => {
 
-    clearCookie(res, "_sesjid", "/");
+    clearCookie(res, "__sesjidt_", "/");
+    clearCookie(res, "_sesjidrt", "/");
     return "logut successfully"
 }
