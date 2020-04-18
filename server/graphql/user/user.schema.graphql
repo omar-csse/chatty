@@ -24,8 +24,6 @@ type Query {
     login(identifier: String!, password: String!): Me!
     logout: String!
     forget_password(email: String!): Boolean!
-    # followers(username: String!) [User]
-    # following(username: String!) [User]
 }
 
 type Mutation {
