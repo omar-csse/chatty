@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const ChattyDB = require('../config/db');
-const { createToken, setCookie } = require('../config/tokens')
+const { createToken, setCookie, days } = require('../config/tokens')
 
 
 router.post('/', async (req, res) => {
@@ -26,9 +26,9 @@ router.post('/', async (req, res) => {
       return res.send({ ok: false });
     }
 
-    const refresh_token = createToken({username: user.username, version:user.tokenVersion}, process.env.REFRESH_SECRET, "30d")
-    setCookie(res, "_sesjidrt", refresh_token, "/refresh_token")
-    setCookie(res, "__sesjidt_", createToken({username: user.username}, process.env.SECRET, "2h"), "/")
+    const refresh_token = createToken({username: user.username, version:user.tokenVersion}, process.env.REFRESH_SECRET, "365d")
+    setCookie(res, "_sesjidrt", refresh_token, "/", days(365))
+    setCookie(res, "__sesjidt_", createToken({username: user.username}, process.env.SECRET, `${days(4*365)}`), "/", days(4*365))
     return res.send({ ok: true });  
 });
 
