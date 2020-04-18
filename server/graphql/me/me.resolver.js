@@ -11,6 +11,7 @@ module.exports = resolvers = {
 			return await login(identifier, password, res);
         },
         logout: (_, __, {req, res}) => {
+            if (!req.loggedIn) throw new AuthenticationError('Not Authenticated');
             return logout(res)
         },
         forget_password: (_, {email}, context) => {

@@ -13,11 +13,11 @@ type Me {
 
 type Query {
     login(identifier: String!, password: String!): Me!
-    logout: String!
+    logout: Boolean!
     forget_password(email: String!): Boolean!
 }
 
 type Mutation {
-    signup(username: String!, email: String!, password: String!): String
+    signup(username: String!, email: String!, password: String!): Boolean!
     reset_password(email: String!, oldPass: String!, newPass: String!): Boolean!
 }
