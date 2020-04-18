@@ -33,10 +33,7 @@ const server = new ApolloServer({
     typeDefs, 
     resolvers,
     debug: false,
-    formatError: (e) => {
-        // return { message: e.originalError.message, code: e.originalError.extensions.code }
-        return e
-    },
+    formatError: (e) => { return { message: e.originalError.message, code: e.originalError.extensions.code }},
     context: ({req, res}) => ({req, res})
 });
 server.applyMiddleware({app});
