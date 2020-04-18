@@ -1,4 +1,4 @@
-const {  clearCookie  } = require('../../config/tokens')
+const {  clearCookie  } = require('../config/tokens')
 
 
 module.exports = logout = (res) => {

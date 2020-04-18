@@ -1,6 +1,6 @@
-const ChattyDB = require('../../config/db');
+const ChattyDB = require('../config/db');
 const bcrypt = require('bcryptjs');
-const { passwordRegExp } = require('../regexp/regexp');
+const { passwordRegExp } = require('../models/regexp/regexp');
 const { UserInputError, AuthenticationError } = require('apollo-server-express')
 
 

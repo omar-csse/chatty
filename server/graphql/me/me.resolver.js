@@ -1,7 +1,7 @@
-const login = require('../../models/db/login.js');
-const logout = require('../../models/db/logout.js');
-const signup = require('../../models/db/signup.js');
-const reset_password = require('../../models/db/reset_password.js');
+const login = require('../../db/login.js');
+const logout = require('../../db/logout.js');
+const signup = require('../../db/signup.js');
+const reset_password = require('../../db/reset_password.js');
 const { AuthenticationError } = require('apollo-server-express')
 
 

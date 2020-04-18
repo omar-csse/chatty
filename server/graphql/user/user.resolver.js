@@ -1,4 +1,4 @@
-const getUser = require('../../models/db/getUser.js');
+const getUser = require('../../db/getUser.js');
 const { AuthenticationError } = require('apollo-server-express')
 
 

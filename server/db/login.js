@@ -1,8 +1,8 @@
-const ChattyDB = require('../../config/db');
+const ChattyDB = require('../config/db');
 const bcrypt = require('bcryptjs');
 const validated = require('./validation');
 const { UserInputError, AuthenticationError } = require('apollo-server-express')
-const { createToken, setCookie, days } = require('../../config/tokens')
+const { createToken, setCookie, days } = require('../config/tokens')
 
 
 module.exports = login = async (identifier, password, res) => {

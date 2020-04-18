@@ -1,4 +1,4 @@
-const ChattyDB = require('../../config/db');
+const ChattyDB = require('../config/db');
 const { ApolloError } = require('apollo-server-express')
 
 module.exports = getUser = async (username) => {

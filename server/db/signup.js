@@ -1,8 +1,8 @@
-const ChattyDB = require('../../config/db');
+const ChattyDB = require('../config/db');
 const bcrypt = require('bcryptjs');
 const moment = require('moment');
 const validated = require('./validation');
-const sendConfirmEmail = require('../mailer/confirmation/confirmation')
+const sendConfirmEmail = require('../models/mailer/confirmation/confirmation')
 const { UserInputError, ApolloError } = require('apollo-server-express')
 
 
