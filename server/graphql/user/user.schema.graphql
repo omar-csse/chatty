@@ -1,32 +1,24 @@
 scalar Date
 
-type Me {
-    token: String!
-    refToken: String!
-    username: String!
-    email: String!
-    bio: String
-    profile_img: String
-}
-
 type User {
     username: String!
 }
 
-type UserInfo {
+type UserProfile {
     username: String!
     bio: String
     profile_img: String
+    number_of_followers: Int!
+    number_of_following: Int!
 }
 
 type Query {
-    user(username: String!): UserInfo!
-    login(identifier: String!, password: String!): Me!
-    logout: String!
-    forget_password(email: String!): Boolean!
+    user(username: String!): UserProfile
+    followers(username: String!): [User]
+    following(username: String!): [User]
 }
 
 type Mutation {
-    signup(username: String!, email: String!, password: String!): String
-    reset_password(email: String!, oldPass: String!, newPass: String!): Boolean!
+    follow_user(username: String!): Boolean!
+    unfollow_user(username: String!): Boolean!
 }
