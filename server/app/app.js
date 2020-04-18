@@ -18,15 +18,18 @@ let refresh_token = require("../routes/refresh_token");
 // middleware
 const jwtAuth = require('../middlewares/jwt.auth');
 
+
 const port = process.env.PORT || 4000;
 const localhost = '127.0.0.1';
 const app = express();
+
 
 app.disable("x-powered-by");
 app.use(cors(), helmet(), cookieParser(), compression());
 app.use('/confirmation', confirmation)
 app.use('/refresh_token', refresh_token)
 app.use(jwtAuth)
+
 
 const server = new ApolloServer({ 
     playground: process.env.NODE_ENV === 'development',
@@ -36,7 +39,9 @@ const server = new ApolloServer({
     formatError: (e) => { return { message: e.originalError.message, code: e.originalError.extensions.code }},
     context: ({req, res}) => ({req, res})
 });
+
 server.applyMiddleware({app});
+
 
 const main = async () => {
     app.listen(port);
