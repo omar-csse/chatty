@@ -26,7 +26,7 @@ const signupDB = async (username, email, password) => {
             await usersDB.insertOne({username, email, confirmedEmail: false, password: hashedPassword, createdAt: moment().format('llll'), tokenVersion: 0});
             sendConfirmEmail(username, email)
     
-            return 'signed up successfully'; 
+            return true; 
         } catch(e) {
             console.log(e)
             throw new ApolloError('Internal server error')
