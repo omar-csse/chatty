@@ -2,6 +2,7 @@ scalar Date
 
 type User {
     username: String!
+    profile_img: String
 }
 
 type UserProfile {

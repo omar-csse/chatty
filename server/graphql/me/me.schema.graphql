@@ -9,6 +9,7 @@ type Me {
     profile_img: String
     number_of_followers: Int!
     number_of_following: Int!
+    createdAt: Date!
 }
 
 type Query {
