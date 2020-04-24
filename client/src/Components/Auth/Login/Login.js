@@ -5,11 +5,6 @@ import { Form, Field } from 'react-final-form'
 
 const Login = (props) => {
 
-    useEffect(() => {
-        // Update the document title using the browser API
-        console.log("render");
-    });
-
 	const renderInput = ({input, meta, type, placeholder}) =>
 		<div className="position-relative form-group">
 			<input placeholder={placeholder} className={`form-control ${meta.touched && meta.invalid ? 'border-danger' : ''}`} type={type} {...input}/>
