@@ -4,6 +4,7 @@ import Signup from './Signup/Signup';
 import Logo from '../Logo/Logo';
 import './Auth.scss';
 
+
 const Auth = (props) => {
 
     useEffect(() => {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from "./Logo.svg"
 import "./Logo.scss"
 
+
 const Logo = (props) => {
 	return (
 		<div className={props.class}>

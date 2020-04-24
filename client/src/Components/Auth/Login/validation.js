@@ -1,6 +1,7 @@
 import * as emailValidator from 'email-validator';
 import { usernameRegExp, passwordRegExp } from '../Regexp'
 
+
 export const validate = values => {
 	const errors = {}
 
