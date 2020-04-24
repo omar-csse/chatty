@@ -8983,6 +8983,11 @@ react-final-form@^6.4.0:
     "@babel/runtime" "^7.9.2"
     ts-essentials "^6.0.3"
 
+react-hook-form@^5.5.3:
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-5.5.3.tgz#6c0fc9136d0b6358ab1917a7b54286b1a7b0c749"
+  integrity sha512-dVPqbJZqLmfbolrC7yP3uDLYYUSSFZBFIeV0hrjve43GxFjXegEgQZ7KzUMxqrCbB+gB+vPA6+A0niyzdmcntQ==
+
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -10692,11 +10697,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typescript@^3.5.3:
-  version "3.8.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
-  integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"

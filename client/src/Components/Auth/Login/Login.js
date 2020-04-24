@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { validate } from './validation';
 import { Form, Field } from 'react-final-form'
 
 const Login = (props) => {
+
+    useEffect(() => {
+        // Update the document title using the browser API
+        console.log("render");
+    });
 
 	const renderInput = ({input, meta, type, placeholder}) =>
 		<div className="position-relative form-group">

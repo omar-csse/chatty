@@ -35,16 +35,6 @@ export const LOGOUT_USER = gql`
     }
 `
 
-export const GET_USER = gql`
-    query user($username: String!) {
-        user(username: $username) {
-            username,
-            bio,
-            profile_img
-        },
-    }
-`
-
 export const FORGET_PASSWORD = gql`
     query forget_password($email: String!) {
         forget_password(email: $email) {
