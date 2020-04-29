@@ -6,6 +6,10 @@ $main-color: $dark-blue;
 $secondary-color: $turquoise;
 $secondary-hover-color: $turquoise-hover;
 
+* {
+    outline: none !important;
+}
+
 html, body, #root, .App {
 	height: 100%;
 	width: 100%;
