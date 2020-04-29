@@ -10,7 +10,7 @@ const Home = (props) => {
         document.body.classList.add('App-home');
         document.getElementById("navbarSupportedContent").classList.remove("show");
 		return (() => document.body.classList.remove('App-home'));
-	});
+	}, []);
 
 	return (
 		<div className="home mt-5">

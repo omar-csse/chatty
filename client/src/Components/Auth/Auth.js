@@ -11,7 +11,7 @@ const Auth = (props) => {
         document.body.classList.add('App-form');
         document.getElementById("navbarSupportedContent").classList.remove("show");
         return(() => document.body.classList.remove('App-form'));
-    });
+    }, []);
 
     return (
         <section className="form">
