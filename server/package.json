@@ -25,7 +25,7 @@
 		"merge-graphql-schemas": "^1.7.7",
 		"moment": "^2.24.0",
 		"mongodb": "^3.5.6",
-		"nodemailer": "^6.4.6"
+		"nodemailer": "^6.4.16"
 	},
 	"devDependencies": {
 		"dotenv": "^8.2.0"
