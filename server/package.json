@@ -23,7 +23,7 @@
 		"helmet": "^3.22.0",
 		"jsonwebtoken": "^8.5.1",
 		"merge-graphql-schemas": "^1.7.7",
-		"moment": "^2.24.0",
+		"moment": "^2.29.4",
 		"mongodb": "^3.5.6",
 		"nodemailer": "^6.4.6"
 	},
